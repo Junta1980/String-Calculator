@@ -1,0 +1,13 @@
+.col-calc{
+  width: 25px;
+  margin: 2px;
+}
+
+.row{
+  max-width: 220px;
+  margin: auto;
+}
+
+.button-left{
+  margin: 3px;
+}

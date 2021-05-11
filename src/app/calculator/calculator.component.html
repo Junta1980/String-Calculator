@@ -1,0 +1,13 @@
+<app-inputstring
+  [value]="inputValue"
+  [resultValue]="resultValue"
+  (valuecalc)="calcEvent()"
+  (resetcalc)="resertcalc()"
+  >
+</app-inputstring>
+<div class="row mt-3">
+  <div class="col-calc" *ngFor="let buttonCalc of buttons" >
+    <app-button [buttonCalculator]="buttonCalc" (clickButton)="clickButton($event)"></app-button>
+  </div>
+</div>
+
