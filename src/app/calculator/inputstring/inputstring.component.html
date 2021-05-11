@@ -1,0 +1,38 @@
+<div class="input-group mb-2">
+  <div class="input-group-text">
+    <i *ngIf="input.pending"
+      class="fa fa-spinner fa-spin fa-fw">
+    </i>
+    <i
+      class="fa"
+      [ngClass]="{
+        'fa-check': input.valid,
+        'fa-exclamation-circle': input.invalid
+      }"
+    >
+    </i>
+  </div>
+  <input
+    class="form-control"
+    [formControl]="input"
+    placeholder="insert String"
+    (input)="enableAsyncValidator()"
+  />
+</div>
+<small
+  class="text-danger"
+  *ngIf="input.invalid && (input.dirty || input.touched)"
+>
+  <span *ngIf="input.errors.required">
+    String is required.
+  </span>
+  <span *ngIf="input.errors.InvalidString">
+    No valid String.Valid example //[delim1][delim2]//....
+  </span>
+</small>
+<div class="row mt-1">
+  <div class="col-sm">
+    <button class="btn btn-info button-left" (click)="clickReset()">Reset</button>
+    <button class="btn btn-info button-left" (click)="clickCalc()">Calculate</button>
+  </div>
+</div>
